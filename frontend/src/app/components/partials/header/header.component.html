@@ -1,0 +1,25 @@
+<header>
+    <div class="container">
+        <nav>
+            <ul>
+                <li *ngIf="!isAuthenticated">
+                    <a routerLink="/login">Login</a>
+                </li>
+                <li *ngIf="isAuthenticated" class="menu-container">
+                    <a routerLink="/dashboard">{{user.name}}</a>
+                    <div class="menu">
+                        <!-- <a>Profile</a> -->
+                        <a routerLink="/pet-upload">Upload a Pet</a>
+                        <a (click)="logout()">Sign Out</a>
+                    </div>
+                </li>
+                <li>
+                    <a routerLink="/favorites-page">
+                        Favorites <span *ngIf="favoritesQuantity">{{favoritesQuantity}}</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+        <a routerLink="/" class="logo">Pet Adoption</a>
+    </div>
+</header>

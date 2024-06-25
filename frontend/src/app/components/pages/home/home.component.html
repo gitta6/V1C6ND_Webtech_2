@@ -1,0 +1,38 @@
+<app-search></app-search>
+<app-categories></app-categories>
+<app-not-found [visible]="!pets || !pets.length" resetLinkText="Go to Homepage!"></app-not-found>
+<ul>
+    <li *ngFor="let pet of pets">
+        <a routerLink="/pet/{{pet.id}}">
+            <img *ngIf="pet.imageUrl" [src]="pet.imageUrl" [alt]="pet.name" />
+            <img *ngIf="!pet.imageUrl" [src]="defaultImageUrl" [alt]="pet.name" />
+            <div class="content">
+                <div class="name">
+                    {{pet.name}}
+                </div>
+                <div class="pet-item-footer">
+                    <div class="locations">
+                        <span>
+                            📍
+                        </span>
+                        {{pet.location}}
+                    </div>
+                    <div class="ages">
+                        <span>
+                            🎂
+                        </span>
+                        {{pet.age}}
+                    </div>
+                    <div class="gender">
+                        <span *ngIf="pet.gender.toLocaleLowerCase() === 'nőstény'">
+                            ♀️
+                        </span>
+                        <span *ngIf="pet.gender.toLocaleLowerCase() === 'hím'">
+                            ♂️
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </li>
+</ul>

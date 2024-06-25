@@ -1,0 +1,64 @@
+<app-not-found [visible]="!pet" notFoundMessage="Pet not found." resetLinkText="Go to Homepage!"></app-not-found>
+<div *ngIf="pet" class="container">
+    <img *ngIf="pet.imageUrl" [src]="pet.imageUrl" [alt]="pet.name" />
+    <img *ngIf="!pet.imageUrl" [src]="defaultImageUrl" [alt]="pet.name" />
+    <div class="details">
+        <div class="header">
+            <span class="name">
+                {{pet.name}}
+            </span>
+            <span>
+                <button class="favorites-button" (click)="addToFavorites()">Add to favorites!♥</button>
+            </span>
+        </div>
+        <div class="age">
+            <span>
+                {{pet.name}} is <strong>{{pet.age}}</strong> year(s) old.
+            </span>
+        </div>
+        <div class="species">
+            <span>
+                <strong>Species:</strong> {{pet.species}}
+            </span>
+        </div>
+        <div class="breed">
+            <span>
+                <strong>Breed:</strong> {{pet.breed}}
+            </span>
+        </div>
+        <div class="gender">
+            <span>
+                <strong>Gender:</strong> {{pet.gender}}
+            </span>
+        </div>
+        <div class="color">
+            <span>
+                <strong>Color:</strong> {{pet.color}}
+            </span>
+        </div>
+        <div class="location">
+            <span>
+                <strong>Location:</strong> {{pet.location}}
+            </span>
+        </div>
+        <div class="description">
+            <span>
+                <strong>Description:</strong> {{pet.description}}
+            </span>
+        </div>
+        <div class="categories">
+            <span>
+                <strong>Categories: </strong>
+                <a *ngFor="let category of pet.categories" routerLink="/category/{{category}}">
+                    {{category}}
+                </a>
+            </span>
+        </div>
+        <button (click)="adopt()">
+            Adopt!
+        </button>
+        <button *ngIf="isAdmin" (click)="onDeletePet(pet.id)" class="delete-button">
+            Delete
+        </button>
+    </div>
+</div>

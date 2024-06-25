@@ -1,0 +1,98 @@
+.container {
+  display: flex;
+  align-items: flex-start;
+  margin: 5rem;
+  flex-wrap: nowrap;
+}
+
+img {
+  border-radius: 0.5rem;
+  object-fit: cover;
+  height: 35rem;
+  width: 35rem;
+  margin-left: 2rem;
+}
+
+.details {
+  flex: 1;
+  padding: 0.5rem;
+  margin-left: 1rem;
+}
+
+.details strong {
+  color: rgb(74, 151, 125);
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+}
+
+.name {
+  font-size: 2.5rem;
+  font-style: italic;
+}
+
+.details div {
+  margin-bottom: 1rem;
+}
+
+.categories {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.categories a {
+  display: inline-flex;
+  background-color: rgba(255, 218, 185, 0.571);
+  height: 2.2rem;
+  padding: 0.4rem 1rem;
+  border-radius: 10rem;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  margin: 0.2rem;
+}
+
+.categories a:hover {
+  cursor: pointer;
+  background-color: rgba(255, 218, 185, 0.9);
+  transform: scale(110%);
+}
+
+button {
+  color: white;
+  background: rgba(74, 151, 125, 0.7);
+  padding: 1rem;
+  border-radius: 1.5rem;
+  font-size: 1.7rem;
+  outline: auto;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+button:hover {
+  background: rgba(74, 151, 125, 0.9);
+  cursor: pointer;
+}
+
+.delete-button {
+  color: white;
+  background: rgba(255, 0, 0, 0.6);
+  padding: 1rem;
+  border-radius: 1.5rem;
+  font-size: 1.7rem;
+  outline: auto;
+  width: 25%;
+  box-sizing: border-box;
+  align-items: center;
+  display: block;
+  margin: 0 auto; 
+  text-align: center;
+  margin-top: 3rem;
+}
+
+.delete-button:hover {
+  background: rgba(255, 0, 0, 0.9);
+  cursor: pointer;
+}

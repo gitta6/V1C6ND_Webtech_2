@@ -1,0 +1,26 @@
+<app-title title="Favorite pets" margin="1.5rem 0 0 3rem"></app-title>
+<app-not-found [visible]="!favorites || !favorites.pets.length" notFoundMessage="No Favorites!" resetLinkText="Go To Homepage!"></app-not-found>
+<div *ngIf="favorites && favorites.pets.length" class="container">
+    <ul>
+        <li *ngFor="let favoritePet of favorites.pets">
+            <div>
+                <img [src]="favoritePet.pet.imageUrl" [alt]="favoritePet.pet.name">
+            </div>
+            <div class="name">
+                <a routerLink="/pet/{{favoritePet.pet.id}}">
+                    {{favoritePet.pet.name}}
+                </a>
+            </div>
+            <div>
+                <button class="remove-button" (click)="removeFromFavorites(favoritePet)">
+                    Remove from favorites
+                </button>
+            </div>
+        </li>
+    </ul>
+    <div class="total">
+        <div class="pets-count">
+            ♥ {{favorites.totalCount}}
+        </div>
+    </div>
+</div>
